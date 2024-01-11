@@ -37,7 +37,7 @@ if (astronautCount <= 7) {
 
                         // Verify shuttle launch can proceed based on above conditions
                         if (preparedForLiftOff) {
-                            console.log("READY FOR LIFT OFF!")
+                            console.log("Have a safe trip astronauts!")
                         }
                     }
                 }
