@@ -27,7 +27,7 @@ if (astronautCount <= 7) {
         if (totalMassKg <= 850000) {
 
             // verify fuel temperature is within -150 and -300
-            if (fuelTempCelsius) {
+            if (fuelTempCelsius >= -300 && fuelTempCelsius <= -150) {
 
                 // verify the fuel level is at 100%
                 if (fuelLevel === 100) {
@@ -37,7 +37,7 @@ if (astronautCount <= 7) {
 
                         // Verify shuttle launch can proceed based on above conditions
                         if (preparedForLiftOff) {
-                                
+                            console.log("READY FOR LIFT OFF!")
                         }
                     }
                 }
