@@ -1,7 +1,7 @@
 // Initialize Variables below
 
-// let date = Monday 2019-03-18;
-// let time = 10:05; //:34;
+let date = "Monday 2019-03-18";
+let time = "10:05:34 AM";
 let astronautCount = 7;
 let astronautStatus = "ready";
 let averageAstronautMassKg = 80.7;
@@ -13,12 +13,13 @@ let maximumMassLimit = 850000;
 let fuelTempCelsius = -225;
 let minimumFuelTemp = -300;
 let maximumFuelTemp = -150;
-let fuelLevel = 100; //%;
+let fuelLevel = "100%";
 let weatherStatus = "clear";
 let preparedForLiftOff = true;
 
 // verify total number of astronauts does not exceed 7
 if (astronautCount <= 7) {
+    // console.log(totalMassKg);
 
     // verify all astronauts are ready
     if (astronautStatus === "ready") {
@@ -30,13 +31,22 @@ if (astronautCount <= 7) {
             if (fuelTempCelsius >= -300 && fuelTempCelsius <= -150) {
 
                 // verify the fuel level is at 100%
-                if (fuelLevel === 100) {
+                if (fuelLevel === "100%") {
 
                     // verify the weather status is clear
                     if (weatherStatus === "clear") {
 
                         // Verify shuttle launch can proceed based on above conditions
                         if (preparedForLiftOff) {
+                            console.log(date);
+                            console.log(time);
+                            console.log(astronautCount);
+                            console.log(crewMassKg);
+                            console.log(fuelMassKg);
+                            console.log(shuttleMassKg);
+                            console.log(totalMassKg);
+                            console.log(fuelTempCelsius);
+                            console.log(weatherStatus);
                             console.log("Have a safe trip astronauts!")
                         }
                     }
@@ -44,4 +54,6 @@ if (astronautCount <= 7) {
             }
         }   
     }
+} else {
+    console.log("System error. Shuttle not cleared for liftoff.");
 }
