@@ -19,7 +19,6 @@ let preparedForLiftOff = true;
 
 // verify total number of astronauts does not exceed 7
 if (astronautCount <= 7) {
-    // console.log(totalMassKg);
 
     // verify all astronauts are ready
     if (astronautStatus === "ready") {
