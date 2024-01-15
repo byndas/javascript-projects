@@ -11,7 +11,7 @@ console.log(newArr);
 console.log(holdCabinet1);
 
 //2) Print a slice of two elements from each array. 
-//   Does slice alter the original arrays? NO
+//   Does slice alter the original arrays? NO!
 console.log("#2");
 let newArr1 = holdCabinet1.slice(0,2);
 let newArr2 = holdCabinet2.slice(0,2);
