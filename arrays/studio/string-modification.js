@@ -5,17 +5,17 @@ let str = "LaunchCode";
 // Either: new variable = the new string
 // Or: reassign the new string to str
 
-let arr = str.split(""); // convert str into array of letters
+let arr = str.split(""); // converts str into array of letters
 console.log("arr:", arr);
 
-let first3 = arr.splice(0,3); // store & remove first three letters from arr
+let first3 = arr.splice(0,3); // stores & removes first three letters from arr
 console.log("first3:", first3);
 console.log("arr:", arr);
 
-arr = arr.concat(first3); // concat first3 to the end of arr
+arr = arr.concat(first3); // concats first3 to the end of arr
 console.log("arr concat first3:", arr);
 
-let newStr = arr.join(""); // convert arr into string & assign to newStr
+let newStr = arr.join(""); // converts arr into string & assigns to newStr
 console.log("newStr:", newStr);
 
 // Use template literal to log the original and modified string in a descriptive phrase
@@ -35,13 +35,16 @@ let info = input.question(`How many letters to relocate? `);
 //    Also, the template literal should note the error
 
 if (info > str.length) {
-    info = 3;
+    info = 3; // default number
     console.log(`ERROR: too many letters selected; defaults to three letters.`);
 } else {
-    let newArr = str.split(""); // store a new array of letters
-    let inputNum = newArr.splice(0, info); //  user input to splice newArr
-    // console.log("inputNum:", inputNum);
+    // stores a new array of letters
+    let newArr = str.split("");
+    // stores first input number of items from newArr
+    let inputSelectArr = newArr.splice(0, info);
+    console.log("inputSelectArr:", inputSelectArr); 
 
-    newStr = newArr.concat(inputNum).join(""); // convert newArr into string & reassign to newStr
+    // converts newArr into string & reassigns to newStr
+    newStr = newArr.concat(inputSelectArr).join(""); 
 }
 console.log(`The original string was ${str}\nThe modified string is ${newStr}`);
