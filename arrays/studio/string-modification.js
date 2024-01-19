@@ -45,6 +45,6 @@ if (info > str.length) {
     console.log("inputSelectArr:", inputSelectArr); 
 
     // converts newArr into string & reassigns to newStr
-    newStr = newArr.concat(inputSelectArr).join(""); 
+    newStr = newArr.concat(inputSelectArr).join("");
 }
 console.log(`The original string was ${str}\nThe modified string is ${newStr}`);
