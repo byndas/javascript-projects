@@ -22,12 +22,12 @@ console.log(cargoHold);
 let cabinetIndex = input.question("Choose a cabinet (0-3): ");
 
 // 4) Use bracket notation & a template literal to display contents of selected cabinet
-//    If user entered invalid number, log error message
+//    Log error message if user entered invalid number 
 
 if (cabinetIndex > 3) {
     console.log(`ERROR: MUST CHOOSE CABINET # 0 - 3`);
 } else {
-    console.log(`CABINET ${cabinetIndex}: ${cargoHold[cabinetIndex]}`);
+    console.log(`CABINET #${cabinetIndex}: ${cargoHold[cabinetIndex]}`);
 }
 
 // 5) Modify code to query user for BOTH a cabinet in cargoHold AND a particular item
