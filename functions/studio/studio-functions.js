@@ -1,82 +1,90 @@
-// COMPLETELY reverse an array by flipping the order of entries
-// AND flipping the order of characters in each element
+// COMPLETELY reverse an array:
 
-// Part One: Reverse Characters
-
-// 1. Define a function named reverseCharacters with a string parameter to reverse
+// flip the order of entries
+// AND flip the order of characters in each element
 
 
-// 2. & 3. Within f(string), split string into array, reverse, join & return it (string)
+//    Part One: Reverse Characters
+
+// 1. define a function named reverseCharacters with a string parameter to reverse
 
 
-// 4. Below function, define & initialize variable to hold a string... x = "";
+// 2. & 3. within f(string), split string into array, reverse, join & return it (string)
 
 
-// 5. console.log(reverseCharacters(myVariableName)); 
-// to verify that f(string) reverses the string characters
+// 4. below the function, define & initialize a variable to hold a string... x = "";
 
 
-// 6. Optional: chains methods to reduce lines in function
+// 5. console.log(reverseCharacters(myVariableName)); to verify f(string) reverses string
 
-// Part Two: Reverse Digits
 
-// 1. Add if statement to reverseCharacters to check typeof parameter
+// 6. Optional: chain methods to reduce lines in function
 
-// 2. If typeof is ‘string’, return reversed string as before
 
-// 3. If typeof is ’number’, convert parameter to a string, reverse characters,
-// then convert it back into a number
+
+//    Part Two: Reverse Digits
+
+// 1. Add if-statement to reverseCharacters(str) to check typeof parameter
+
+// 2. If typeof is 'string', return reversed string as before
+
+// 3. If typeof is 'number', convert parameter to a string, reverse characters,
+//    & convert it back into a number
 
 // 4. Return the reversed number
 
-// 5. Log the result returned by the function to verify your code works
-// for both strings and numbers -- Do this before moving on to the next exercise
+// 5. Log result returned by function to confirm for both strings and numbers
+//    Do this before the next exercise
 
-// Part Three: Complete Reversal
 
-// 1. Define and initialize an empty array
+//    Part Three: Complete Reversal
 
-// 2. Loop through the old array
+// 1. Define & initialize empty array
 
-// 3. For each element in the old array, call reverseCharacters to flip characters or digits
+// 2. Loop through old array
 
-// 4. Add the reversed string or # to the array defined in PART ONE (a)
+// 3. For each element in old array, call reverseCharacters() to flip characters or digits
 
-// 5. Return the final, reversed array
+// 4. Add reversed string or num to the array defined in PART ONE (a)
 
-// 6. Log the results from each test case to verify your code
+// 5. Return final reversed array
+
+// 6. Log results from each test case to confirm
 
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
-// Bonus Missions
 
-// 1. Have a clear, descriptive name like funPhrase
+//    Bonus Missions
 
-// 2. Retrieve only the last character from strings with lengths <= 3
+// 1. Use a clear, descriptive name like funPhrase
 
-// 3. Retrieve only the first 3 characters from strings with lengths > 3
+// 2. Retrieve only last character from strings with lengths <= 3
 
-// 4. Use a template literal to return the phrase `We put the '___' in '___'.`
-// Fill first blank with modified string & second blank with original string
+// 3. Retrieve only first three characters from strings with lengths > 3
 
-// Test Function
+// 4. Use template literal to return `We put the '_' in '_'.`
+//    Fill first blank with modified string & second blank with original string
 
-// 1. Outside the function, define variable str & initialize with a string 
+
+//    Test Function
+
+// 1. Outside function, define variable 'str' set equal to a string 
 
 // 2. Call your function & log the returned phrase
 
 
-// Area of rectangle = length x width
 
-// 1. Define a function with parameters to calculate area of a rectangle
+//    Area of rectangle = length x width
 
-// 2. Return the area but do NOT log it
+// 1. Define function with parameters to calculate area of rectangle
+
+// 2. Return area but do NOT log it
 
 // 3. Call your area function by passing in two arguments... (length, width)
 
 // 4. If only one argument passed to function, then the shape is a square
-// Modify your code to handle with this
+//    Modify your code to handle that
 
-// 5. Use a template literal to print `The area is ____ cm^2.`
+// 5. Use template literal to log `The area is ____ cm^2.`
