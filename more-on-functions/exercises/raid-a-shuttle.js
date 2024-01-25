@@ -10,9 +10,9 @@ function checkFuel(level) {
 
 function holdStatus(arr){
   if (arr.length < 7) {
-    return `Spaces available: ${7-arr.length}.`;
+    return `Spaces available: ${7 - arr.length}.`;
   } else if (arr.length > 7){
-    return `Over capacity by ${arr.length-7} items.`;
+    return `Over capacity by ${arr.length - 7} items.`;
   } else {
     return "Full";
   }
@@ -24,34 +24,42 @@ let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
-/* Steal some fuel from the shuttle:
- * /
+//   steal some shuttle fuel:
  
-//a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
+//A) define anonymous function
+//   set it equal to a variable with an unsuspicious name
+//   give it a parameter for the shuttle's fuel level
 
-//b). You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
+//B) take shuttle fuel:
+//   inside your function, reduce fuel level as much as possible
+//   WITHOUT changing the color that checkFuel() returns
 
-//c). Once you figure out how much fuel to pump out, return that value.
+//C) return how much fuel to take from shuttle
 
-//d). Decide where to best place your function call to gather our new fuel.
+//D) decide where to call your function that takes shuttle fuel
 
-/* Next, liberate some of that glorious cargo.
- * /
 
-//a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
+//   steal some shuttle cargo:
 
-//b). You need to swipe two items from the cargo hold. Choose well. Stealing water ain’t gonna get us rich. Put the swag into a new array and return it from the function.
+//a) define another anonymous function with an array as a parameter
+//   set it equal to another innocently named variable
 
-//c). The cargo hold has better security than the fuel tanks. It counts how many things are in storage. You need to replace what you steal with something worthless. The count MUST stay the same, or you’ll get caught and thrown into the LaunchCode brig.
+//b) swipe two items from the cargo hold
+//   choose wisely: most valuable cargo first
+//   push the loot into new array & return it in that anon function
 
-//d). Don’t get hasty, matey! Remember to test your function.
+//c) since cargo-hold counts its storage, replace stolen items with worthlesss stuff
+//   the count MUST stay the same or you’ll be caught & jailed
 
-/* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
- * /
+//d) test your function
+
+
+//   log a theft receipt:
  
-//a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
+//A) define an irs function with fuelLevel & cargoHold as arguments (perameters?)
 	
-//b). Call your anonymous fuel and cargo functions from within irs.
+//B) call your anonymous fuel & cargo functions from within the irs function
 
-//c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+//C) use template literal to return:
+//  `Raided ${_} kg of fuel from the tanks, and stole ${_} and ${_} from the cargo hold.`
 
