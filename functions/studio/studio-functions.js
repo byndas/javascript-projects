@@ -1,90 +1,88 @@
-// COMPLETELY reverse an array:
+/*    COMPLETELY reverse an array: Flip order of entries & characters
 
-// flip the order of entries
-// AND flip the order of characters in each element
+      Part One: Reverse Characters
 
-
-//    Part One: Reverse Characters
-
-// 1. define a function named reverseCharacters with a string parameter to reverse
-
-
-// 2. & 3. within f(string), split string into array, reverse, join & return it (string)
-
-
+1-3   define reverseCharacters function with a string parameter to reverse:
+      split string into array, reverse, join & return */
 // 4. below the function, define & initialize a variable to hold a string... x = "";
-
-
-// 5. console.log(reverseCharacters(myVariableName)); to verify f(string) reverses string
-
-
-// 6. Optional: chain methods to reduce lines in function
-
-
+// 5. log your function call to verify string reversal
+// console.log(reverseCharacters(someStr));
 
 //    Part Two: Reverse Digits
 
-// 1. Add if-statement to reverseCharacters(str) to check typeof parameter
-
-// 2. If typeof is 'string', return reversed string as before
-
+// 1. Add if-statement to reverseCharacters(p) to check typeof parameter
+// 2. If typeof is 'string', return reversed string
 // 3. If typeof is 'number', convert parameter to a string, reverse characters,
 //    & convert it back into a number
-
 // 4. Return the reversed number
-
-// 5. Log result returned by function to confirm for both strings and numbers
+// 5. Log your function call to confirm results for both strings & numbers
 //    Do this before the next exercise
 
+function reverseCharacters(someVar) {
+    // console.log("someVar: ", typeof someVar);
+    if (typeof someVar === 'string') {
+        return someVar.split('').reverse().join('');
+    } else if (typeof someVar === 'number') {
+        const reverseVar = someVar.toString().split('').reverse().join('');
+        return parseInt(reverseVar);
+    }
+}
+console.log(reverseCharacters('YES'));
+console.log(reverseCharacters(81));
 
 //    Part Three: Complete Reversal
 
-// 1. Define & initialize empty array
-
-// 2. Loop through old array
-
-// 3. For each element in old array, call reverseCharacters() to flip characters or digits
-
-// 4. Add reversed string or num to the array defined in PART ONE (a)
-
-// 5. Return final reversed array
-
-// 6. Log results from each test case to confirm
-
+// Define & set empty array, Loop through sample array
+// For each element in old array, call reverseCharacters()... to flip characters or digits
+// Add reversed string or number to the array defined in PART ONE (A)
+// Return final reversed array
+// Log results from each test case to confirm
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
+function fullReversal(array) {
+    let result = [];
+    for (i = array.length-1; i > -1; i--) {
+        result.push(reverseCharacters(array[i]));
+    }
+    return result;
+}
 
-//    Bonus Missions
-
-// 1. Use a clear, descriptive name like funPhrase
-
-// 2. Retrieve only last character from strings with lengths <= 3
-
-// 3. Retrieve only first three characters from strings with lengths > 3
-
-// 4. Use template literal to return `We put the '_' in '_'.`
-//    Fill first blank with modified string & second blank with original string
+console.log(fullReversal(arrayTest1), fullReversal(arrayTest2), fullReversal(arrayTest3));
 
 
-//    Test Function
+// Bonus Missions
 
-// 1. Outside function, define variable 'str' set equal to a string 
+// Use a descriptive variable name
+// Retrieve last character if strings.length <= 3
+// Retrieve first three characters if strings.lengths > 3
+// return `We put the ${newStr} in ${originalStr}.`
 
-// 2. Call your function & log the returned phrase
+let str1 = 'functions rock!';
+let str2 = 'ok';
+
+function bonusTask(str) {
+    let result = "";
+    if (str.length <= 3) {
+        result += str[str.length - 1];
+    } else {
+        result = str.slice(0,3);
+    }
+    return `We put the ${result} in ${str}.`
+}
+console.log(bonusTask(str1), bonusTask(str2));
 
 
+///////////////////////////////////
+// rectangle area = length x width
+// Define function with parameters needed to calculate & return rectangle area
+// Call your function by passing in arguments length & width
+// If only one argument passed to function, then the shape is a square
+// Use template literal to log `The area is ____ cm^2.`
 
-//    Area of rectangle = length x width
-
-// 1. Define function with parameters to calculate area of rectangle
-
-// 2. Return area but do NOT log it
-
-// 3. Call your area function by passing in two arguments... (length, width)
-
-// 4. If only one argument passed to function, then the shape is a square
-//    Modify your code to handle that
-
-// 5. Use template literal to log `The area is ____ cm^2.`
+function rectArea(length, width) {
+    const area = length * (width || length);
+    return `The area is ${area} cm^2.`;
+}
+console.log(rectArea(5, 20), rectArea(3));
