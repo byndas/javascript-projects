@@ -1,5 +1,2 @@
-function callMe(func) {
-    func();
-}
-
+function callMe(func) { func(); }
 callMe("Al");

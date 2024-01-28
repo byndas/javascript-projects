@@ -1,17 +1,17 @@
 function checkFuel(level) {
-  if (level > 100000){
-    return 'green';
-  } else if (level > 50000){
-    return 'yellow';
+  if (level > 100000) {
+    return "green";
+  } else if (level > 50000) {
+    return "yellow";
   } else {
-    return 'red';
+    return "red";
   }
 }
 
-function holdStatus(arr){
+function holdStatus(arr) {
   if (arr.length < 7) {
     return `Spaces available: ${7 - arr.length}.`;
-  } else if (arr.length > 7){
+  } else if (arr.length > 7) {
     return `Over capacity by ${arr.length - 7} items.`;
   } else {
     return "Full";
@@ -19,47 +19,71 @@ function holdStatus(arr){
 }
 
 let fuelLevel = 200000;
-let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
+let cargoHold = [
+  "meal kits",
+  "space suits",
+  "first-aid kit",
+  "satellite",
+  "gold",
+  "water",
+  "AE-35 unit",
+];
 
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
-//   steal some shuttle fuel:
- 
-//A) define anonymous function
-//   set it equal to a variable with an unsuspicious name
-//   give it a parameter for the shuttle's fuel level
 
-//B) take shuttle fuel:
-//   inside your function, reduce fuel level as much as possible
-//   WITHOUT changing the color that checkFuel() returns
+// STEAL SHUTTLE FUEL:
 
-//C) return how much fuel to take from shuttle
+// define anon func with param for shuttle fuel level
+const stealShuttleFuel = function (fuelLevel) { // param unecessary
+  const fuelCheckColor = checkFuel(fuelLevel);
+  let fuelTaken = 0;
 
-//D) decide where to call your function that takes shuttle fuel
-
-
-//   steal some shuttle cargo:
-
-//a) define another anonymous function with an array as a parameter
-//   set it equal to another innocently named variable
-
-//b) swipe two items from the cargo hold
-//   choose wisely: most valuable cargo first
-//   push the loot into new array & return it in that anon function
-
-//c) since cargo-hold counts its storage, replace stolen items with worthlesss stuff
-//   the count MUST stay the same or you’ll be caught & jailed
-
-//d) test your function
+  while (checkFuel(fuelLevel) === fuelCheckColor) {
+    fuelTaken++;
+    fuelLevel--;
+  } 
+  fuelLevel++;
+  fuelTaken--;
+  // return how much fuel to take from shuttle... 99,999 fuel units
+  console.log(`SHUTTLE FUEL UNITS STOLEN:`, fuelTaken);
+  return fuelTaken;
+};
+// console.log(stealShuttleFuel(fuelLevel));
 
 
-//   log a theft receipt:
- 
-//A) define an irs function with fuelLevel & cargoHold as arguments (perameters?)
-	
-//B) call your anonymous fuel & cargo functions from within the irs function
+// STEAL SHUTTLE CARGO:
 
-//C) use template literal to return:
-//  `Raided ${_} kg of fuel from the tanks, and stole ${_} and ${_} from the cargo hold.`
+// define anon func with an array param
+const stealCargoItems = function(cargoHold) { // unecessary param
+  // steal two most valuable cargo items... "gold" & "satellite"
+  let stolenArr = [];
+  // replace stolen items with worthlesss stuff
+  // cargoHold.length MUST not change
+  for (i=0; i<cargoHold.length; i++) {
+    if (cargoHold[i] === 'gold') {
+      stolenArr.push(cargoHold[i]);
+      cargoHold[i] = 'toilet paper';
+    } 
+    else if (cargoHold[i] === 'satellite') {
+      stolenArr.push(cargoHold[i]);
+      cargoHold[i] = 'dirt';
+    }
+  }
+  console.log(cargoHold)
+  return stolenArr;
+}
+// console.log(stealCargoItems(cargoHold));
 
+
+// LOG THEFT RECEIPT:
+
+// define an irs func with fuelLevel & cargoHold as arguments... (as perameters?)
+function irs(fuelLevel, cargoHold) { // unecessary params
+  // call your anon fuel & cargo theft functions
+  const stolenFuel = stealShuttleFuel(fuelLevel);
+  const stolenCargo = stealCargoItems(cargoHold);
+  return `Stole ${stolenFuel} kg of shuttle fuel, then stole ${stolenCargo[0]} and ${stolenCargo[1]} of shuttle cargo.`
+}
+console.log(irs(fuelLevel,cargoHold));

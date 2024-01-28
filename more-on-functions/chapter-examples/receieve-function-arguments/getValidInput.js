@@ -8,14 +8,9 @@ function getValidInput(prompt, isValid) {
       console.log("Invalid input. Try again.");
       userInput = input.question(prompt);
     }
-
     return userInput;
 }
 
-// TODO 1: write a validator 
-// that ensures input starts with "a"
-
-// TODO 2: write a validator 
-// that ensures input is a vowel
-
-// Be sure to test your code!
+// write a validator to ensure input starts with "a"
+// write a validator to ensure input is a vowel
+// test your code!

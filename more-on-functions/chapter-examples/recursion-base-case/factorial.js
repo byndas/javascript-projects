@@ -1,5 +1,4 @@
-//The following concept check assumes that only positive integers are passed to the function.
-
+// assumes positive integer argument
 function factorial(integer){
   if (/*enter base case test here*/){
     return integer;
@@ -7,7 +6,6 @@ function factorial(integer){
     return integer*(factorial(integer-1));
   }
 }
-
 console.log(factorial(4));
-
-//Skill boost! Add validation to return an error message if the function is passed a string, negative number or a decimal value.
+// Write validation to return error message if argument is
+// a string, negative number or decimal value

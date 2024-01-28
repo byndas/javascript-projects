@@ -1,3 +1,5 @@
+let arr = ['L', 'C', '1', '0', '1'];
+
 function combineEntries(arrayName) {
   if (arrayName.length <= 1){
     return arrayName[0];
@@ -6,11 +8,8 @@ function combineEntries(arrayName) {
     return arrayName[0] + combineEntries(arrayName.slice(1));
   }
 }
-
-//First, run the code to see the result.
-
-//Next, uncomment the console.log statement above to see how each call to combineEntries looks at a different section of the original array.
-
-let arr = ['L', 'C', '1', '0', '1'];
+// run to see the result
+// uncomment console.log to see how each call to combineEntries
+// looks at a different section of the original array
 
 console.log(combineEntries(arr));

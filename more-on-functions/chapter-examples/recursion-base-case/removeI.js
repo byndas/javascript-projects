@@ -1,3 +1,5 @@
+let arrayToChange = ['One', 'i', 'c', 'X', 'i', 'i', 54];
+
 function removeI(arr) {
     if (/* Enter base case test here */){
       return arr;
@@ -6,7 +8,4 @@ function removeI(arr) {
       return removeI(arr);
     }
 };
-
-let arrayToChange = ['One', 'i', 'c', 'X', 'i', 'i', 54];
-
 console.log(removeI(arrayToChange));
