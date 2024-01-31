@@ -46,7 +46,7 @@ function uniqueId(arr) {
     arr.push(newId);
   }
 }
-// generate random num 0 - 10
+// generate random nums (0 - 10) & mutate crew objects
 function crewInfo(arr) {
   let idNums = [];
 
