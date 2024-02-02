@@ -38,7 +38,7 @@ let waterBear = {
 let crew = [superChimpOne, superChimpTwo, salamander, dog, waterBear];
 
 function uniqueId(arr) {
-  let newId = Math.floor(Math.random() * 11);
+  let newId = Math.round(Math.random() * 10);
 
   if (arr.includes(newId)) {
     return uniqueId(arr);
@@ -53,7 +53,7 @@ function crewInfo(arr) {
   for (i = 0; i < arr.length; i++) {
     uniqueId(idNums);
     arr[i].astronautID = idNums[i];
-    arr[i].move = () => Math.floor(Math.random() * 11);
+    arr[i].move = () => Math.round(Math.random() * 10);
   }
   return crew;
 }

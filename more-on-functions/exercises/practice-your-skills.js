@@ -5,7 +5,7 @@ a) If passed a number, return tripled value
 b) If passed a string, return “ARRR!”
 c) Test your function before continuing
 
-Increase your code! 
+Increase your code!
 Use your fuction with .map() to change an array as follows:
 a) Triple any numbers
 b) Replace any strings with “ARRR!”
