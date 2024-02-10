@@ -62,8 +62,17 @@ class Novel extends Book {
   }
 }
 
-// objects for exercises 2 & 3:
-let makingTheShip = new Manual(
+let pridePrejudice = new Novel(
+  "Pride and Prejudice",
+  "Jane Austen",
+  1813,
+  "1111111111111",
+  432,
+  32,
+  "No"
+);
+
+let makingShip = new Manual(
   "Top Secret Shuttle Building Manual",
   "Redacted",
   2013,
@@ -73,6 +82,10 @@ let makingTheShip = new Manual(
   "No"
 );
 
-// exercises 4 & 5:
-goodRead.checkout(5);
-goodRead.dispose();
+pridePrejudice.checkout(155);
+pridePrejudice.dispose();
+
+makingShip.dispose(2024);
+
+console.log("makingShip", makingShip);
+console.log("pridePrejudice", pridePrejudice);
