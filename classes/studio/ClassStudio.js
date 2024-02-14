@@ -1,16 +1,19 @@
 class CrewCandidate {
   constructor(name, mass, scores) {
     // scores is array of test results
+    this.name = name;
+    this.mass = mass;
+    this.scores = scores;
   }
   addingScores() {}
   averagingScores() {}
   candidateStatus() {}
 }
-// check that each candidate object correctly assigns keys & values
 let bear = new CrewCandidate("Bubbba Bear", 135, [88, 85, 90]);
 let maltese = new CrewCandidate("Merry Maltese", 1.5, [93, 88, 97]);
 let gator = new CrewCandidate("Glad Gator", 225, [75, 78, 62]);
 
+// check that each candidate object correctly assigns keys & values
 console.log("bear", bear);
 console.log("maltese", maltese);
 console.log("gator", gator);
