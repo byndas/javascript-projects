@@ -35,18 +35,18 @@ window.addEventListener("load", function () {
 	});
 
 	upBtn.addEventListener("click", function () {
-		rocket.style.top = parseInt(rocket.style.top - 10) + "px";
-		spaceShuttleHeight += 10000; // miles
+		rocket.style.top = parseInt(rocket.style.top + 10) + "px";
+		spaceShuttleHeight = parseInt(spaceShuttleHeight.innerHTML) + 10000;
 	});
 	downBtn.addEventListener("click", function () {
 		rocket.style.bottom = parseInt(rocket.style.top + 10) + "px";
-		spaceShuttleHeight -= 10000;
+		spaceShuttleHeight = parseInt(spaceShuttleHeight.innerHTML) + 10000;
 	});
 	leftBtn.addEventListener("click", function () {
 		rocket.style.left = parseInt(rocket.style.left + 10) + "px";
 	});
 	rightBtn.addEventListener("click", function () {
-		rocket.style.right = parseInt(rocket.style.left - 10) + "px";
+		rocket.style.right = parseInt(rocket.style.left + 10) + "px";
 	});
 });
 
