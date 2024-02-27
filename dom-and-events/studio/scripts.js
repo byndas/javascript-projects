@@ -35,18 +35,20 @@ window.addEventListener("load", function () {
 	});
 
 	upBtn.addEventListener("click", function () {
-		rocket.style.top = parseInt(rocket.style.top + 10) + "px";
-		spaceShuttleHeight = parseInt(spaceShuttleHeight.innerHTML) + 10000;
+		rocket.style.top = parseInt(rocket.style.top - 10) + "px";
+		spaceShuttleHeight.innerHTML =
+			parseInt(spaceShuttleHeight.innerHTML) + 10000;
 	});
 	downBtn.addEventListener("click", function () {
-		rocket.style.bottom = parseInt(rocket.style.top + 10) + "px";
-		spaceShuttleHeight = parseInt(spaceShuttleHeight.innerHTML) + 10000;
+		rocket.style.top = parseInt(rocket.style.top + 10) + "px";
+		spaceShuttleHeight.innerHTML =
+			parseInt(spaceShuttleHeight.innerHTML) - 10000;
 	});
 	leftBtn.addEventListener("click", function () {
 		rocket.style.left = parseInt(rocket.style.left + 10) + "px";
 	});
 	rightBtn.addEventListener("click", function () {
-		rocket.style.right = parseInt(rocket.style.left + 10) + "px";
+		rocket.style.left = parseInt(rocket.style.left - 10) + "px";
 	});
 });
 
@@ -64,14 +66,14 @@ shuttle height += 10,000;
 
 
 if moving shuttle:
-use position: absolute; --> to position object based on its location in its parent object
-for example, the parent object of #shuttleBackground div is flight simulator
+	use position: absolute; --> to position object based on its location in its parent object
+	for example, the parent object of #shuttleBackground div is flight simulator
 
-position: relative; --> positions object relative to its fellow child objects
-can use position: relative; --> if planet objects are within #shuttleBackground div
+	position: relative; --> positions object relative to its fellow child objects
+	can use position: relative; --> if planet objects are within #shuttleBackground div
 
-set object's position with “px” --> position: “10px” --> 10 pixels
-to add pixels to position, use parseInt to convert current position to a number
+	set object's position with “px” --> position: “10px” --> 10 pixels
+	to add pixels to position, use parseInt to convert current position to a number
 
 
 3.  if “Land” button clicked:
