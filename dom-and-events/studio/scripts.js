@@ -35,20 +35,32 @@ window.addEventListener("load", function () {
 	});
 
 	upBtn.addEventListener("click", function () {
-		rocket.style.top = parseInt(rocket.style.top - 10) + "px";
+		let currentPlace = rocket.offsetTop;
+		if (currentPlace > 0) {
+			rocket.style.top = currentPlace - 10 + "px";
+		}
 		spaceShuttleHeight.innerHTML =
 			parseInt(spaceShuttleHeight.innerHTML) + 10000;
 	});
 	downBtn.addEventListener("click", function () {
-		rocket.style.top = parseInt(rocket.style.top + 10) + "px";
-		spaceShuttleHeight.innerHTML =
-			parseInt(spaceShuttleHeight.innerHTML) - 10000;
+		let currentPlace = rocket.offsetTop;
+		if (currentPlace < 250) {
+			rocket.style.top = currentPlace + 10 + "px";
+			spaceShuttleHeight.innerHTML =
+				parseInt(spaceShuttleHeight.innerHTML) - 10000;
+		}
 	});
 	leftBtn.addEventListener("click", function () {
-		rocket.style.left = parseInt(rocket.style.left + 10) + "px";
+		let currentPlace = rocket.offsetLeft;
+		if (currentPlace >= 10) {
+			rocket.style.left = currentPlace - 10 + "px";
+		}
 	});
 	rightBtn.addEventListener("click", function () {
-		rocket.style.left = parseInt(rocket.style.left - 10) + "px";
+		let currentPlace = rocket.offsetLeft;
+		if (currentPlace < 701) {
+			rocket.style.left = currentPlace + 10 + "px";
+		}
 	});
 });
 
