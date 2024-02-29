@@ -9,7 +9,7 @@ Bing	    bing	    https://www.bing.com/search
 Ask	        ask	        https://www.ask.com/web
 ...............................................
 within <form>:
-1.  create text input with name="q"
+1.  create text input with name="q"  --->  <input type="text" name="q" />
 
 2.  create radio group with radio button for each search engine
         -- use same value for each radio button's "engine" attribute
