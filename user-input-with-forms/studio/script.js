@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
 			bing: "https://www.bing.com/search",
 			ask: "https://www.ask.com/web",
 		};
-		// REFACTOR: for-in loop over actionsObj
+		// REFACTOR: actionsObj.for-in loop
 		if (chosenEngine === "google") {
 			actionURL = "https://www.google.com/";
 		} else if (chosenEngine === "duckDuckGo") {
