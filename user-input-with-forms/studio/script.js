@@ -49,9 +49,8 @@ window.addEventListener("load", function () {
 		} else if (chosenEngine === "ask") {
 			actionURL = "https://www.ask.com/web";
 		} else {
-			alert("");
-			// prevent form submission
-			event.preventDefault();
+			alert("Must select a search engine!");
+			event.preventDefault(); // prevents form submission
 		}
 	}
 });
