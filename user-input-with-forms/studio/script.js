@@ -9,21 +9,21 @@ Bing	    bing	    https://www.bing.com/search
 Ask	        ask	        https://www.ask.com/web
 -----------------------------------------------
 within form:
-1.  create text input with name = "q"
+1.  create text input with name="q"
 
-2.  create radio group with a radio button for each search engine
-        use same value for each radio button's "engine" attribute
- 		create label element for each radio button
+2.  create radio group with radio button for each search engine
+        -- use same value for each radio button's "engine" attribute
+ 		-- include label element for each radio button
 
-3.  add submit button to form with value = "Go!"
+3.  create submit form button with value="Go!"
 
-4.  get action URL via actions["keyName"] & chosenEngine.value
-        set form's action via setAttribute
+4.  get action-URL via actions["keyName"] & chosenEngine.value
+        -- set form's action via setAttribute
 
 Bonus Missions:
-    1. validate submit handler so that user has:
-        A.  selected a search engine --> DONE
-        B.  entered a non-empty search term
+    1. submit handler validates that user:
+        A.  selects a search engine --> DONE
+        B.  enters a non-empty search term
 
     2. add some CSS
 */
