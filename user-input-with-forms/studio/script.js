@@ -23,7 +23,7 @@ Bonus Missions:
     2. add some CSS
 */
 window.addEventListener("load", function () {
-	// register handler
+	// register event submit handler
 	function setSearchEngine(event) {
 		// set form's action as user’s chosen search engine
 		let chosenEngine = document.querySelector("input[name=engine]:checked");
