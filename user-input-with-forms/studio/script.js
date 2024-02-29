@@ -8,7 +8,8 @@ DuckDuckGo	duckDuckGo	https://duckduckgo.com/
 Bing	    bing	    https://www.bing.com/search
 Ask	        ask	        https://www.ask.com/web
 -----------------------------------------------
-1.  create text input within form with name = "q"
+within form:
+1.  create text input with name = "q"
 2.  create radio group with a radio button for each search engine
         use same value for each radio button's "engine" attribute
 3.  create label element for each radio button
