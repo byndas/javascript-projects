@@ -17,7 +17,7 @@ within form:
 
 3.  create submit form button with value="Go!"
 
-4.  get action-URL via actions["keyName"] & chosenEngine.value
+4.  access action-URL via actions["keyName"] & chosenEngine.value
         -- set form's action via setAttribute
 
 Bonus Missions:
