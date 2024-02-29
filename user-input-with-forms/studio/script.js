@@ -7,7 +7,7 @@ Google	    google	    https://www.google.com/search
 DuckDuckGo	duckDuckGo	https://duckduckgo.com/
 Bing	    bing	    https://www.bing.com/search
 Ask	        ask	        https://www.ask.com/web
------------------------------------------------
+...............................................
 within form:
 1.  create text input with name="q"
 
@@ -16,10 +16,10 @@ within form:
  		-- include label element for each radio button
 
 3.  create submit form button with value="Go!"
-
+.................................................................
 4.  access action-URL via actions["keyName"] & chosenEngine.value
         -- set form's action via setAttribute
-
+---------------------------------------------
 Bonus Missions:
     1. submit handler validates that user:
         A.  selects a search engine --> DONE
