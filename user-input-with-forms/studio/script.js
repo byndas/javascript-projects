@@ -53,11 +53,7 @@ window.addEventListener("load", function () {
 			alert("Must select a search engine!");
 			event.preventDefault(); // prevents form submission
 		}
-		// .................................................................
-		// 4.  access action-URL via actions["keyName"] & chosenEngine.value
-		// -- set form's action via setAttribute
-		// -------------------------------------
-
+		// --------------------------------------------------------------
 		// set <form> action attribute as user’s chosen search engine URL
 		form.setAttribute("action", actionURL);
 	}
