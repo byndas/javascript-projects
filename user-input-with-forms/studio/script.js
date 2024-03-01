@@ -28,41 +28,41 @@ Bonus Missions:
     2. add some CSS
 */
 
-window.addEventListener("load", function () {
-	// register event submit handler
-	function setSearchEngine(event) {
-		let actionURL;
-		let form = document.querySelector("form");
-		let chosenEngine = document.querySelector("input[name=engine]:checked");
-		let actionsObj = {
-			google: "https://www.google.com/",
-			duckDuckGo: "https://duckduckgo.com/",
-			bing: "https://www.bing.com/search",
-			ask: "https://www.ask.com/web",
-		};
-		//..............................
-		if (chosenEngine === "google") {
-			actionURL = "https://www.google.com/";
-		} else if (chosenEngine === "duckDuckGo") {
-			actionURL = "https://duckduckgo.com/";
-		} else if (chosenEngine === "bing") {
-			actionURL = "https://www.bing.com/search";
-		} else if (chosenEngine === "ask") {
-			actionURL = "https://www.ask.com/web";
-		} else {
-			alert("Must select a search engine!");
-			event.preventDefault(); // prevents form submission
-		}
-		// .................................................................
-		// 4.  access action-URL via actions["keyName"] & chosenEngine.value
-		// -- set form's action via setAttribute
-		// -------------------------------------
+// register event submit handler
+function setSearchEngine(event) {
+	let actionURL;
+	let form = document.querySelector("form");
+	let chosenEngine = document.querySelector("input[name=engine]:checked");
+	let actionsObj = {
+		google: "https://www.google.com/",
+		duckDuckGo: "https://duckduckgo.com/",
+		bing: "https://www.bing.com/search",
+		ask: "https://www.ask.com/web",
+	};
+	//..............................
+	if (chosenEngine === "google") {
+		actionURL = "https://www.google.com/";
+	} else if (chosenEngine === "duckDuckGo") {
+		actionURL = "https://duckduckgo.com/";
+	} else if (chosenEngine === "bing") {
+		actionURL = "https://www.bing.com/search";
+	} else if (chosenEngine === "ask") {
+		actionURL = "https://www.ask.com/web";
+	} else {
+		alert("Must select a search engine!");
+		event.preventDefault(); // prevents form submission
+	}
+	// .................................................................
+	// 4.  access action-URL via actions["keyName"] & chosenEngine.value
+	// -- set form's action via setAttribute
+	// -------------------------------------
 
-		// set <form> action attribute as user’s chosen search engine URL
-		for (const action in actionsObj) {
-			if (chosenEngine.value === action["keyName"]) {
-				form.setAttribute("action", action["keyName"]);
-			}
+	// set <form> action attribute as user’s chosen search engine URL
+	for (const action in actionsObj) {
+		if (chosenEngine.value === action["keyName"]) {
+			form.setAttribute("action", action["keyName"]);
 		}
 	}
-});
+}
+
+window.addEventListener("load", setSearchEngine);
