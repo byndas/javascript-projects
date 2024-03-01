@@ -29,41 +29,46 @@ Bonus Missions:
 */
 
 window.addEventListener("load", function () {
-	// register event submit handler
+	// registers event submit handler
 	function setSearchEngine(event) {
-		let actionURL;
 		let form = document.querySelector("form");
-		let chosenEngine = document.querySelector("input[name=engine]:checked");
+		let searchTerm = document.querySelector('input[name="q"]').value;
+		let selectedEngine = document.querySelector(
+			"input[name=engine]:checked"
+		);
 		let actionsObj = {
 			google: "https://www.google.com/",
 			duckDuckGo: "https://duckduckgo.com/",
 			bing: "https://www.bing.com/search",
 			ask: "https://www.ask.com/web",
 		};
+		let engine = selectedEngine ? selectedEngine.value : null;
 		//..............................
-		if (chosenEngine === "google") {
+		if (!engine) {
+			event.preventDefault(); // prevents form submission
+			return alert("Please select a search engine.");
+		}
+		if (!searchTerm) {
+			event.preventDefault(); // prevents form submission
+			return alert("Please enter a search term.");
+		}
+		let actionURL = actionsObj[engine];
+		/*
+		if (selectedEngine === "google") {
 			actionURL = "https://www.google.com/";
-		} else if (chosenEngine === "duckDuckGo") {
+		} else if (selectedEngine === "duckDuckGo") {
 			actionURL = "https://duckduckgo.com/";
-		} else if (chosenEngine === "bing") {
+		} else if (selectedEngine === "bing") {
 			actionURL = "https://www.bing.com/search";
-		} else if (chosenEngine === "ask") {
+		} else if (selectedEngine === "ask") {
 			actionURL = "https://www.ask.com/web";
 		} else {
 			alert("Must select a search engine!");
 			event.preventDefault(); // prevents form submission
-		}
+		}	*/
 		// --------------------------------------------------------------
-		// set <form> action attribute as user’s chosen search engine URL
+		// set <form> action attribute as user’s selected search engine URL
 		form.setAttribute("action", actionURL);
-
-		// 	REFACTOR by looping over actionsObj:
-
-		//	for (const action in actionsObj) {
-		//		if (chosenEngine.value === action["keyName"]) {
-		//			form.setAttribute("action", action["keyName"]);
-		// 		}
-		// 	}
 	}
 	form.addEventListener("submit", setSearchEngine);
 });
