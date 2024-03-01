@@ -22,7 +22,7 @@ within <form>:
 ---------------------------------------------
 Bonus Missions:
     1. submit handler validates that user:
-        A.  selects a search engine --> DONE
+        A.  selects a search engine
         B.  enters a non-empty search term
 
     2. add some CSS
