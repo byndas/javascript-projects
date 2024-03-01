@@ -31,19 +31,16 @@ Bonus Missions:
 window.addEventListener("load", function () {
 	// register event submit handler
 	function setSearchEngine(event) {
-		let chosenEngine = document.querySelector("input[name=engine]:checked");
-
+		let actionURL;
 		let form = document.querySelector("form");
-
+		let chosenEngine = document.querySelector("input[name=engine]:checked");
 		let actionsObj = {
 			google: "https://www.google.com/",
 			duckDuckGo: "https://duckduckgo.com/",
 			bing: "https://www.bing.com/search",
 			ask: "https://www.ask.com/web",
 		};
-
-		let actionURL;
-
+		//..............................
 		if (chosenEngine === "google") {
 			actionURL = "https://www.google.com/";
 		} else if (chosenEngine === "duckDuckGo") {
@@ -56,7 +53,6 @@ window.addEventListener("load", function () {
 			alert("Must select a search engine!");
 			event.preventDefault(); // prevents form submission
 		}
-
 		// .................................................................
 		// 4.  access action-URL via actions["keyName"] & chosenEngine.value
 		// -- set form's action via setAttribute
