@@ -56,5 +56,13 @@ window.addEventListener("load", function () {
 		// --------------------------------------------------------------
 		// set <form> action attribute as user’s chosen search engine URL
 		form.setAttribute("action", actionURL);
+
+		// 	REFACTOR by looping over actionsObj:
+
+		//	for (const action in actionsObj) {
+		//		if (chosenEngine.value === action["keyName"]) {
+		//			form.setAttribute("action", action["keyName"]);
+		// 		}
+		// 	}
 	}
 });
