@@ -59,10 +59,6 @@ window.addEventListener("load", function () {
 		// -------------------------------------
 
 		// set <form> action attribute as user’s chosen search engine URL
-		for (const action in actionsObj) {
-			if (chosenEngine.value === action["keyName"]) {
-				form.setAttribute("action", action["keyName"]);
-			}
-		}
+		form.setAttribute("action", actionURL);
 	}
 });
