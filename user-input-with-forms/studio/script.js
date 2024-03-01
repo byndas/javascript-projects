@@ -1,4 +1,6 @@
 /*
+https://github.com/byndas/javascript-projects/blob/main/user-input-with-forms/studio/script.js
+
 SEARCH ENGINE OPTIONS:
 ----------------------------------
 Label	    Value	    Search-URL
@@ -16,7 +18,7 @@ within <form>:
  		-- include label element for each radio button
 
 3.  create submit form button with value="Go!"
-.................................................................
+.................................................................X
 4.  access action-URL via actions["keyName"] & chosenEngine.value
         -- set form's action via setAttribute
 ---------------------------------------------
@@ -27,11 +29,13 @@ Bonus Missions:
 
     2. add some CSS
 */
+
 window.addEventListener("load", function () {
 	// register event submit handler
 	function setSearchEngine(event) {
 		// set form's action as user’s chosen search engine
 		let chosenEngine = document.querySelector("input[name=engine]:checked");
+		let form = document.querySelector("form");
 
 		let actionsObj = {
 			google: "https://www.google.com/",
@@ -39,6 +43,17 @@ window.addEventListener("load", function () {
 			bing: "https://www.bing.com/search",
 			ask: "https://www.ask.com/web",
 		};
+		// .................................................................X
+		// 4.  access action-URL via actions["keyName"] & chosenEngine.value
+		// -- set form's action via setAttribute
+		// ---------------------------------------------
+		for (const action in actionsObj) {
+			if (chosenEngine.value === action["keyName"]) {
+				form.setAttribute("action", action["keyName"]);
+			}
+		}
+
+		let actionURL;
 		// REFACTOR: actionsObj.for-in loop
 		if (chosenEngine === "google") {
 			actionURL = "https://www.google.com/";
