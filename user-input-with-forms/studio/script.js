@@ -43,7 +43,8 @@ window.addEventListener("load", function () {
 			ask: "https://www.ask.com/web",
 		};
 		let engine = selectedEngine ? selectedEngine.value : null;
-		//........................................................
+		let actionURL = actionsObj[engine];
+		//.................................
 		if (!engine) {
 			event.preventDefault(); // prevents form submission
 			return alert("Please select a search engine.");
@@ -52,9 +53,7 @@ window.addEventListener("load", function () {
 			event.preventDefault(); // prevents form submission
 			return alert("Please enter a search term.");
 		}
-		let actionURL = actionsObj[engine];
-		// ................................
-		/*
+		/*	//	REFACTORED ABOVE...........
 		if (selectedEngine === "google") {
 			actionURL = "https://www.google.com/";
 		} else if (selectedEngine === "duckDuckGo") {
@@ -67,7 +66,7 @@ window.addEventListener("load", function () {
 			alert("Must select a search engine!");
 			event.preventDefault(); // prevents form submission
 		}	*/
-		// -----------------------------------------------------------------
+		// .................................................................
 		// sets <form> action attribute as user’s selected search engine URL
 		form.setAttribute("action", actionURL);
 	}
