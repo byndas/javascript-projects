@@ -13,21 +13,33 @@ async function getData(url) {
 }
 
 function renderAstronautTemplate(data) {
+    const ordered = data.sort((a, b) => a.hoursInSpace < b.hoursInSpace);
+    console.log("ordered:", ordered);
     data.forEach( astronaut => {
-        const astronautTemplate = `<div class="astronaut">
+        const astronautTemplate =
+        `<div class="astronaut">
             <div class="bio">
                 <h3>${astronaut.firstName} ${astronaut.lastName}</h3>
                 <ul>
-                <li>Hours in space: ${astronaut.hoursInSpace}</li>
-                <li>Active: ${astronaut.active}</li>
-                <li>Skills: ${astronaut.skills.map((skill) => skill)}</li>
+                    <li>Hours in space: ${astronaut.hoursInSpace}</li>
+                    <li class=${Boolean(astronaut.active) ? 'active' : 'inactive'}>Active: ${astronaut.active}</li>
+                    <li>Skills: ${astronaut.skills.map((skill) => skill)}</li>
+                </ul>
             </div>
-        <img class="avatar" src=${astronaut.picture}>
+            <img class="avatar" src=${astronaut.picture}>
         </div>`
         const div = document.querySelector(`#container`);
         div.innerHTML += astronautTemplate;
     });
 }
+
+// Bonus Missions:
+    // display astronauts sorted from most to least time in space
+    // make “Active: true” text color: "green" for astronauts still active (active is true)
+    // add count of astronauts to page
+
+
+
 /*
 Requirements:
 
