@@ -4,7 +4,7 @@ async function getData(url) {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data);
+        console.log("data:", data);
         renderAstronautTemplate(data);
     }
     catch(error) {
@@ -13,8 +13,13 @@ async function getData(url) {
 }
 
 function renderAstronautTemplate(data) {
+    document.querySelector("h1").innerHTML += data.length;
+
+    const div = document.querySelector(`#container`);
+
     const ordered = data.sort((a, b) => a.hoursInSpace < b.hoursInSpace);
     console.log("ordered:", ordered);
+
     data.forEach( astronaut => {
         const astronautTemplate =
         `<div class="astronaut">
@@ -28,17 +33,14 @@ function renderAstronautTemplate(data) {
             </div>
             <img class="avatar" src=${astronaut.picture}>
         </div>`
-        const div = document.querySelector(`#container`);
         div.innerHTML += astronautTemplate;
     });
 }
 
 // Bonus Missions:
     // display astronauts sorted from most to least time in space
-    // make “Active: true” text color: "green" for astronauts still active (active is true)
+    // if “Active: true”, text color: "green" for astronauts still active
     // add count of astronauts to page
-
-
 
 /*
 Requirements:
