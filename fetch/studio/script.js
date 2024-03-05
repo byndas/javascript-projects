@@ -1,10 +1,35 @@
+window.addEventListener("load", getData("https://handlers.education.launchcode.org/static/astronauts.json"));
+
+async function getData(url) {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log(data);
+        renderAstronautTemplate(data);
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
+function renderAstronautTemplate(data) {
+    data.forEach( astronaut => {
+        const astronautTemplate = `<div class="astronaut">
+            <div class="bio">
+                <h3>${astronaut.firstName} ${astronaut.lastName}</h3>
+                <ul>
+                <li>Hours in space: ${astronaut.hoursInSpace}</li>
+                <li>Active: ${astronaut.active}</li>
+                <li>Skills: ${astronaut.skills.map((skill) => skill)}</li>
+            </div>
+        <img class="avatar" src=${astronaut.picture}>
+        </div>`
+        const div = document.querySelector(`#container`);
+        div.innerHTML += astronautTemplate;
+    });
+}
 /*
 Requirements:
-
-1.  Add window load event
-
-2.  Make GET request via fetch to astronauts-API:
-    <https://handlers.education.launchcode.org/static/astronauts.json>__
 
 3.  Add each returned astronaut to web page
 
